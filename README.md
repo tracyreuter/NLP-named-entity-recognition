@@ -2,12 +2,12 @@
 
 ## Overview
 
-This project demonstrates how **Named Entity Recognition (NER)** works in Natural Language Processing (NLP). NER algorithms identify and classify named entities in text into predefined categories such as persons, organizations, locations, dates, and more. This demo uses **spaCy**, a leading open-source library for advanced NLP, which provides pre-trained models for entity recognition.
+This project demonstrates how **Named Entity Recognition (NER)** works in Natural Language Processing (NLP). NER algorithms identify and classify named entities in text into predefined categories. This demo uses **spaCy**, a leading open-source library for advanced NLP, which provides pre-trained models for entity recognition.
 
 ### Key Concepts
 
-- **Named Entity**: A real-world object with a proper name (e.g., "NASA", "New York", "January 2026")
-- **Entity Type**: The category of the entity (e.g., PERSON, ORG, GPE, DATE)
+- **Named Entity**: A real-world object with a proper name (e.g., "Michael Jordan", "April 15", "First Amendment")
+- **Entity Type**: The category of the entity (in this demo: PERSON, DATE, or LAW)
 - **NER Model**: A machine learning model trained to identify and classify entities in text
 - **spaCy**: An industrial-strength NLP library with pre-trained models for multiple languages
 
@@ -30,14 +30,11 @@ This demo uses the **20 Newsgroups dataset**, a publicly available corpus of ~20
 ### Step 2: Load spaCy Model
 
 - Load spaCy's pre-trained English model (`en_core_web_sm`)
-- This model was trained on OntoNotes 5 corpus and recognizes multiple entity types including:
+- This model was trained on OntoNotes 5 corpus and recognizes multiple entity types
+- For simplicity and clarity, this demo focuses on three entity types:
   - **PERSON**: People, including fictional characters
-  - **ORG**: Organizations, companies, agencies, institutions
-  - **GPE**: Geopolitical entities (countries, cities, states)
   - **DATE**: Absolute or relative dates or periods
-  - **MONEY**: Monetary values
-  - **CARDINAL**: Numerals that do not fall under another type
-  - And many more
+  - **LAW**: Named laws, legal documents, or legal references
 
 ### Step 3: Perform Named Entity Recognition
 
@@ -45,39 +42,19 @@ This demo uses the **20 Newsgroups dataset**, a publicly available corpus of ~20
 - Extract all recognized entities with their types
 - Store results in a DataFrame for analysis
 
-**Note:** Processing is limited to a subset of documents for performance reasons, as NER is computationally intensive compared to simpler text processing tasks.
+**Note:** Processing is limited to a subset of documents because NER is computationally intensive.
 
 ### Step 4: Examine Entity Distributions
 
-- Analyze the distribution of different entity types across the corpus
+- Analyze the distribution of the three entity types (PERSON, DATE, LAW) across the corpus
 - Show the most frequently occurring entities for each type
-- Some entity types appear more frequently depending on the topic (e.g., more PERSON entities in sports discussions, more ORG entities in political debates)
+- Entity patterns vary by topic: sports discussions contain more PERSON entities (athletes, teams), while political debates reference more LAW entities (legislation, acts, amendments)
 
 ### Step 5: Visualize Entity Distributions
 
-- Create a bar chart showing the overall distribution of entity types
-- Create a heatmap showing how entity types are distributed across different documents
+- Create a bar chart showing the overall distribution of the three entity types
+- Create a heatmap showing how PERSON, DATE, and LAW entities are distributed across different documents
 - Visualization reveals patterns in entity usage across different topics
-
-## Common Entity Types in OntoNotes
-
-- **PERSON**: Barack Obama, Michael Jordan, Einstein
-- **ORG**: NASA, Microsoft, United Nations
-- **GPE**: United States, California, New York, Earth
-- **DATE**: Monday, last year, 1995, next week
-- **TIME**: 3 PM, morning, midnight
-- **MONEY**: $100, fifty dollars, 20 euros
-- **CARDINAL**: one, two, 25, thousands
-- **ORDINAL**: first, second, 1st, 2nd
-- **PERCENT**: 50%, twenty percent
-- **QUANTITY**: 100 miles, 5 kilograms
-
-## Requirements
-
-```bash
-pip install spacy numpy pandas plotnine scikit-learn
-python -m spacy download en_core_web_sm
-```
 
 ## Applications
 
