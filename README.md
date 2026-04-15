@@ -2,14 +2,14 @@
 
 ## Overview
 
-This project demonstrates how **Named Entity Recognition (NER)** works in Natural Language Processing (NLP). NER algorithms identify and classify named entities in text into predefined categories. This demo uses **spaCy**, a leading open-source library for advanced NLP, which provides pre-trained models for entity recognition.
+This project demonstrates how **Named Entity Recognition (NER)** works in Natural Language Processing (NLP). NER algorithms identify and classify named entities in text into predefined categories. NER has a wide variety of use cases, such as: search/content recommendation, knowledge graph construction, and redacting text. This demo uses **spaCy**, a leading open-source library for advanced NLP, which provides pre-trained models for entity recognition.
 
 ### Key Concepts
 
 - **Named Entity**: A real-world object with a proper name (e.g., "Michael Jordan", "April 15", "First Amendment")
 - **Entity Type**: The category of the entity (in this demo: PERSON, DATE, or LAW)
 - **NER Model**: A machine learning model trained to identify and classify entities in text
-- **spaCy**: An industrial-strength NLP library with pre-trained models for multiple languages
+- **spaCy**: An open-source NLP library with pre-trained models for multiple languages
 
 ## Dataset
 
@@ -48,21 +48,10 @@ This demo uses the **20 Newsgroups dataset**, a publicly available corpus of ~20
 
 - Analyze the distribution of the three entity types (PERSON, DATE, LAW) across the corpus
 - Show the most frequently occurring entities for each type
-- Entity patterns vary by topic: sports discussions contain more PERSON entities (athletes, teams), while political debates reference more LAW entities (legislation, acts, amendments)
 
-### Step 5: Visualize Entity Distributions
+**Note:** SpaCy seems to confuse some PERSON entities in this corpus. Is "Moon" being treated like a fictional characters? Would this still happen if other entity types were included?
 
-- Create a bar chart showing the overall distribution of the three entity types
-- Create a heatmap showing how PERSON, DATE, and LAW entities are distributed across different documents
-- Visualization reveals patterns in entity usage across different topics
+### Step 5: Visualize and Analyze Entity Distributions
 
-## Applications
-
-Named Entity Recognition is used in:
-
-- **Information Extraction**: Automatically extracting structured information from unstructured text
-- **Question Answering**: Identifying entities to answer "who", "where", "when" questions
-- **Content Recommendation**: Understanding what entities a user is interested in
-- **Search Enhancement**: Improving search by recognizing entity queries
-- **Knowledge Graph Construction**: Building databases of entities and their relationships
-- **Text Anonymization**: Identifying and redacting personal information
+- Visualization shows patterns in entity types across different categories in the corpus.
+- For example (as you might reasonably expect!) LAW entities are more common in the political debates than in the baseball category.
